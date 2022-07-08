@@ -1,13 +1,704 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  background-color: #000001;
 }
+.appContainer{
+  height: 100vh;
+  width: 100%;
+  min-width: 800px;
+}
+.signupContainer{
+  position: relative;
+  justify-content: center;
+  display: flex;
+  background-color: rgb(15, 80, 60);
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  font-family: Helvetica,Arial,sans-serif;
+}
+.signUpBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 70%;
+  font-size: 25px;
+}
+.signUpBox img{
+ height: 60px;
+}
+.SignUpForm{
+  width: 25%;
+}
+.inputSignup{
+  padding: 4px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(159, 174, 174);
+  outline: none;
+  background-color: rgba(25, 28, 60, 0);
+  font-size: 20px;
+  height: 40px;
+  width: calc(100% - 8px);
+  color: rgba(255, 255, 255, 0.961);
+  font-size: 16px;
+}
+.inputSignup:hover{
+  border: 1px solid rgb(254, 255, 255);
+}
+.inputSignup::placeholder{
+  color: rgba(240, 248, 255, 0.439);
+}
+/*MediaQ for Inputfield*/
+@media only screen and (max-width: 650px) {
+  .SignUpForm{
+    width: 50%;
+  }
+}
+.sumbitButton{
+  margin-top: 10px;
+  padding: 3px;
+  background-color: rgb(30, 172, 124);
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  font-family:Helvetica,Arial,sans-serif;
+  color:white;
+}
+.sumbitButton:active{
+  background-color: #54aa85;
+}
+.linkForm{
+  font-size: 15px;
+}
+.link{
+  text-decoration: none;
+  color: #17d180;
+}
+.error{
+  background-color:#611a1aa4;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e82020;
+  color: #e82020;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/*Styling for mainpage*/
+.mainpageContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(10, 12, 12);
+}
+.chatContainer{
+  display: flex;
+  height: 95%;
+  width: 85%;
+}
+/*MediaQ for Chatcontainer*/
+@media only screen and (max-width: 1440px) {
+  .chatContainer{
+    height: 100%;
+    width: 100%;
+  }
+}
+.profilSide{
+  width: 30%;
+  height: 100%;
+}
+.chatSide{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  border-left-style:solid ;
+  border-left-width:0.1vh ;
+  border-left-color:rgba(255, 255, 255, 0.206) ;
+}
+.chatSideNoOpponentId{
+  background-repeat: no-repeat;
+  background-size:contain;
+  display: flex;
+  flex-direction: column;
+  font-family:Helvetica,Arial,sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  background-color: #3e505a80;
+  border-left-style:solid ;
+  border-left-width:0.1vh ;
+  border-left-color:rgba(255, 255, 255, 0.206) ;
+}
+.titleClone{
+  font-size: 26px;
+  color: white;
+}
+.text{
+  font-size: 12px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.346);
+  border-bottom-style:solid ;
+  border-bottom-width:0.1vh ;
+  border-bottom-color:rgba(255, 255, 255, 0.206) ;
+}
+/*MediaQ for width Profil/Chatside*/
+@media only screen and (max-width: 1000px) {
+  .chatSide{
+    width: 60%;
+  }
+  .profilSide{
+    width: 40%;
+  }
+  .chatSideNoOpponentId{
+    width: 60%;
+  }
+}
+.topAreaChatSide{
+  display: flex;
+  width: 100%;
+  height: 61px ;
+  background-color: #242e36;
+}
+.chatAreaChatSide{
+  overflow-y: auto;
+  background-size:cover ;
+  width: 100%;
+  height: calc(100% - 122px);
+}
+.chatAreaChatSide::-webkit-scrollbar{
+  max-width:6px;
+}
+.chatAreaChatSide::-webkit-scrollbar-thumb{
+  background-color:#474d56a9;
+}
+.bottomAreaChatSide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 62px;
+  background-color: #20282f;
+}
+.topAreaProfilSide{
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+  width: 100%;
+  height: 61px;
+  background-color: #242e36;
+}
+.middleAreaProfilSide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(16, 22, 28);
+  border-bottom-style:solid ;
+  border-bottom-width:0.1vh;
+  border-bottom-color:rgba(255, 255, 255, 0.098) ;
+}
+.bottomAreaProfilSide{
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 112px);
+  background-color: rgb(16, 22, 28);
+}
+.bottomAreaProfilSide::-webkit-scrollbar{
+  max-width: 5px;
+}
+.bottomAreaProfilSide::-webkit-scrollbar-thumb{
+  background-color:#384352a9;
+}
+.inputProfilSide{
+  padding: 0;
+  width: 80%;
+  padding-left: 60px;
+  padding-right: 10px;
+  margin-right: 10px;
+  height: 37px;
+  font-size: 13px;
+  font-family: Helvetica,Arial,sans-serif;
+  border-radius: 8px;
+  background-color: rgb(27, 35, 43);
+  color:rgba(255, 255, 255, 0.797);
+  border:none;
+  outline: none;
+}
+.inputProfilSide::placeholder{
+  font-size: 13px;
+  color:rgba(255, 255, 255, 0.436);
+}
+.searchIconInput{
+  position: relative;
+  left: 24px;
+  color: rgba(255, 255, 255, 0.63);
+  height: 20px;
+}
+.arrowIconChatUsers{
+  display: none;
+  position: relative;
+  left: 24px;
+  color: rgba(0, 255, 204, 0.63);
+  height: 20px;
+  animation:spin 0.07s linear ;
+  animation-fill-mode: forwards;  
+}
+.searchIconInput.active{
+  display: none;
+}
+.arrowIconChatUsers.active{
+  display: flex;
+  transition: all 2s;
+}
+@keyframes spin { 
+  100% { 
+      transform:rotate(90deg); 
+  } 
+}
+.myProfilPictureBox{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+.myProfilButtonsBox{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  justify-content: end;
+}
+.myProfilPicture{
+  height:45px;
+  cursor: pointer;
+  width: 45px;
+  margin-left: 14px;
+  border-radius: 100%;
+  background-size: cover;
+}
+.icon{
+  color: rgba(255, 255, 255, 0.646);
+  cursor: pointer;
+  height: 100%;
+  width: 55%;
+}
+.iconBox{
+  display: flex;
+  margin-right: 2%;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  border-radius: 100%;
+  background: rgba(62, 68, 72, 0);
+}
+.iconBox:active{
+  background: rgb(62, 68, 72);
+}
+.opponentProfilPictureBox{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+}
+.opponentName{
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 16px;
+  color:white;
+}
+.buttonChatSideTop{
+  display: flex;
+  align-items:center;
+  justify-content: end;
+  height: 100%;
+  width:100% ;
+}
+.smileyBox{
+  display: flex;
+  align-items: center;
+  justify-content:space-around ;
+  width:100px;
+  height: 100%;
+}
+.chatInputBox{
+  display:flex ;
+  align-items: center;
+  width: calc(100% - 170px);
+  height: 100%;
+}
+.inputChat{
+  font-family: Helvetica,Arial,sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: rgb(42, 52, 62);
+  outline: none;
+  border:none;
+  font-size:15px;
+  color:rgba(255, 255, 255, 0.823);
+}
+.inputChat::placeholder{
+  font-size: 15px;
+  color:rgba(255, 255, 255, 0.419);
+}
+.sendButton{
+  width:70px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.iconSend{
+  height: 30px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.583);
+  transform: rotate(90deg);
+}
+.iconSmiley{
+  height: 30px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.583);
+}
+.sendIconBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 40px;
+  border-radius: 100%;
+  background: rgba(62, 68, 72, 0);
+  overflow: hidden;
+}
+.sendIconBox:active{
+  background: rgb(62, 68, 72);
+}
+.userContainer{
+  display: flex;
+  font-family: Helvetica,Arial,sans-serif;
+  color: rgba(255, 255, 255, 0.732);
+  font-size: 18px;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 73px;
+}
+.userContainer:hover{
+  background-color: rgba(51, 59, 65, 0.299);
+ }
+.userPictureBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+.userInformation{
+  width: 60%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom-style:solid;
+  border-bottom-width:0.1vh ;
+  border-bottom-color:rgba(255, 255, 255, 0.082) ;
+}
+/*MediaQ for width Profilcomponent*/
+.userTime{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-style:solid;
+  border-bottom-width:0.1vh ;
+  border-bottom-color:rgba(255, 255, 255, 0.082) ;
+}
+.timeStamp{
+  display: flex;
+  font-size: 12px;
+  align-items: flex-end;
+  height: 50%;
+
+}
+.unreadMessage{
+  display: flex;
+  height: 50%;
+  align-items: start;
+  margin-top: 2px;
+  justify-content: center;
+
+}
+.unreadMessageCount{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #20282f;
+  border-radius:100%;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(20, 201, 141);
+}
+.userPicture{
+  height:51px;
+  width: 51px;
+  border-radius: 100%;
+  background-size: cover;
+}
+.userText{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:baseline;
+}
+.userName{
+  height: 30%;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+.userLastMessage{
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.468);
+}
+/*Styling of Chatbooble*/
+.chatBoobleIncoming{
+  margin-top: 5px;
+  height: max-content;
+  display: flex; 
+  justify-content: right;
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.738);
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+.chatBoobleOutgoing{
+  margin-top: 5px;
+  height: max-content;
+  display: flex; 
+  justify-content: left;
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.738);
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+.chatBoobleOutgoing:last-child{
+ margin-bottom: 5px;
+}
+.chatBoobleIncoming:last-child{
+  margin-bottom: 5px;
+ }
+.chatContentIncoming{
+  max-width: 60%;
+  min-width: 50px;
+  flex-wrap: wrap;
+  width: max-content;
+  border-radius: 7px;
+  padding-right: 5px;
+  padding-left: 5px;
+  word-wrap: break-word;
+  margin-right: 70px;
+  background-color: rgb(19, 106, 88);
+}
+.textIncoming{
+  margin-top: -10px;
+  width: 100%;
+}
+.chatContentOutgoing{
+  max-width: 60%;
+  min-width: 50px;
+  width: max-content;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  word-wrap: break-word;
+  margin-left: 70px;
+  background-color: #242e36;
+  }
+
+.chatInfo{
+  display: flex;
+  width: 100%;
+  height: 2px;
+  font-size: 11px;
+  margin-bottom: 5px;
+  color: #fdfdfd94;
+  justify-content:end;
+  align-items: flex-end;
+}
+/*Chat-Bobble-End*/
+.changeProfil{
+  width: 30%;
+  height: 100%;
+}
+/*MediaQ for Chatcontainer*/
+@media only screen and (max-width: 1000px) {
+  .changeProfil{
+    width: 40%;
+  }
+}
+.changeProfilTop{
+  height: 110px;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  background-color: #253037;
+}
+.changeProfilBottom{
+  height: calc(100% - 110px);
+  width: 100%;
+  background-color: #181d22;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.changeProfilBottom::-webkit-scrollbar{
+  max-width:6px;
+}
+.changeProfilBottom::-webkit-scrollbar-thumb{
+  background-color:#474d56a9;
+}
+.iconToggleProfil{
+  height: 22px;
+  cursor: pointer;
+  margin-left:20px;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.727);
+}
+.profilText{
+  margin-left:20px;
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(255, 255, 255, 0.827);
+}
+.profilImageBox{
+  height: 280px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.profilNameBox{
+  height: 280px;
+  width: 100%;
+  padding-left: 30px;
+}
+.fillerBox{
+  height: calc(100% - 580px);
+  width: 100%;
+}
+.profilImage{
+  object-fit: cover;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  background-color: grey ;
+}
+.profilImage:hover{
+  cursor: pointer;
+}
+.arrowDown{
+  height: 22px;
+  color: #ffffff76;
+}
+.scrollButton{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 130px;
+  right: 9%;
+  height: 37px;
+  width: 37px;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: rgb(42, 52, 62);
+}
+@media only screen and (max-width: 1440px) {
+  .scrollButton{
+    right: 2%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .scrollButton{
+    display: none;
+  }
+}
+.greenNameTag{
+  color: #1f8e6f;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+}
+.profilName{
+  color: rgba(255, 255, 255, 0.749);
+  background-color: #fdfffe00;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  border: none;
+  width: 87%;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #17d18000;
+}
+.profilName::placeholder{
+  color: rgba(255, 255, 255, 0.749);
+}
+.profilName:focus{
+ outline: none;
+ border-bottom-width: 2px;
+ border-bottom-style: solid;
+ border-bottom-color: #1f8e6f;
+}
+.profilChangeText{
+  color: rgba(255, 255, 255, 0.429);
+  line-height: 1.4;
+  padding-right: 40px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+}
+.pencilIcon{
+  position: relative;
+  height: 20px;
+  right: 5%;
+  color: rgba(255, 255, 255, 0.607);
+  cursor: pointer;
+}
+.uploadButton{
+  padding: 10px;
+  background-color: #17d180c7;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.64);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 10px;
+}
+.uploadButton:active{
+  background-color: #17d180f3;
+}
+.uploadButton:hover{
+  cursor: pointer;
 }
